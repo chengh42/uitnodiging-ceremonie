@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #212121;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #212121;
     --foreground: #ededed;
   }
 }
@@ -22,5 +22,58 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  font-feature-settings: "liga", "kern";
+  font-size: 1rem;
+}
+
+.blue {
+  color: #0000ff;
+}
+.cyan {
+  color: #00ffff;
+}
+.green {
+  color: #00ff00;
+}
+.red {
+  color: #ff0000;
+}
+.yellow {
+  color: #ffff00;
+}
+
+.bg-blue {
+  background: #0000ff;
+}
+.subtext {
+  text-align: right;
+}
+.title {
+  background: #0000ff;
+  text-align: center;
+}
+.content {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.divider {
+  background: #ffff00;
+  line-height: 50%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.footer {
+  justify-content: space-between;
+}
+.IoJup {
+  -moz-osx-font-smoothing: initial;
+  aspect-ratio: 4 / 5;
+  margin: 0px;
+  color: white;
+  white-space: pre-wrap;
+  font-size: clamp(0.74rem, 0.0418rem + 3.4909vw, 1.7rem);
+  line-height: normal;
 }

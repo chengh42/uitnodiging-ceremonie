@@ -1,103 +1,97 @@
-import Image from "next/image";
+const NR_CHAR_PER_LINE = 40;
+
+const TITLE = "Uitnodiging Ceremonie van Hsin";
+const CONTENT = [
+  "Ik krijg de Nederlandse nationaliteit!",
+  "Ik nodig u graag uit voor een feestelijke (?) ceremonie in het stadhuis van Amsterdam.",
+  "Tijdens deze bijeenkomst word ik officieel een kaaskop.",
+  "In deze brief leest u wat de ceremonie voor u betekent en wat u moet doen.",
+].join(" ");
 
 export default function Home() {
+  const wrappedContent = wrapText(CONTENT, NR_CHAR_PER_LINE);
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+        <div className="flex flex-col gap-2">
+          <pre className="IoJup">
+            <div className="subtext">
+              <span className="green">Hsin&apos;s Teletekst </span>
+              <span className="yellow">
+                <a className="yellow">101</a>
+              </span>
+            </div>
+            <div className="divider"> </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="title">
+              <span className="yellow">{TITLE}</span>
+            </div>
+
+            <div className="divider"> </div>
+
+            <div className="content">
+              <span className="yellow">▀ </span>
+              <span className="cyan">
+                Lieve Lenore,
+                <br />
+                <br />
+              </span>
+              <span className="yellow">▀ </span>
+              {wrappedContent.map((line) => (
+                <span key={line} className="cyan">
+                  {line}
+                  <br />
+                </span>
+              ))}
+              <span className="cyan">
+                <br />
+                <span className="yellow">▀ </span>
+                Met vriendelijke groet,
+                <br />
+                <span className="yellow">▀ </span>
+                Hsin
+              </span>
+            </div>
+
+            <div className="divider"> </div>
+
+            <div className="footer flex flex-row">
+              <span className="red">
+                <a className="red">belangrijk</a>
+              </span>
+              <span className="green">
+                <a className="green">koffie na afloop</a>
+              </span>
+              <span className="cyan">
+                <a
+                  className="cyan"
+                  href="https://github.com/chengh42/uitnodiging-ceremonie"
+                >
+                  code
+                </a>
+              </span>
+            </div>
+          </pre>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
+}
+
+function wrapText(text: string, maxCharsPerLine: number): string[] {
+  const words = text.split(" ");
+  const lines = [];
+  let currentLine = "";
+
+  for (const word of words) {
+    if ((currentLine + word).length < maxCharsPerLine) {
+      currentLine += (currentLine ? " " : "") + word;
+    } else {
+      lines.push(currentLine);
+      currentLine = word;
+    }
+  }
+  if (currentLine) lines.push(currentLine);
+  return lines;
 }
