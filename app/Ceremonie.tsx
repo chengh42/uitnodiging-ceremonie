@@ -35,6 +35,7 @@ export function Ceremonie() {
           De deur gaat een half uur voor de ceremonie open. Om 14.30 sluit de
           deur van de zaal. Daarna mag u niet meer meedoen aan de ceremonie.
           <br />
+          <br />
         </span>
       </div>
     </>

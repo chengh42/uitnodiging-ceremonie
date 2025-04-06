@@ -1,5 +1,3 @@
-const NR_CHAR_PER_LINE = 34;
-
 const TITLE = "Uitnodiging Ceremonie van Hsin";
 const CONTENT = `
 Ik krijg de Nederlandse nationaliteit!
@@ -10,8 +8,6 @@ In deze brief leest u wat de ceremonie voor u betekent en wat u moet doen.
 `.replaceAll("\n", " ");
 
 export function Uitnodiging() {
-  const wrappedContent = wrapText(CONTENT, NR_CHAR_PER_LINE);
-
   return (
     <>
       <div className="title">
@@ -28,36 +24,18 @@ export function Uitnodiging() {
           <br />
         </span>
         <span className="yellow">▀ </span>
-        {wrappedContent.map((line) => (
-          <span key={line} className="cyan">
-            {line}
-            <br />
-          </span>
-        ))}
+        <span className="cyan">
+          {CONTENT}
+          <br />
+        </span>
         <span className="cyan">
           <br />
           Groetjes,
           <br />
           Hsin
+          <br />
         </span>
       </div>
     </>
   );
-}
-
-function wrapText(text: string, maxCharsPerLine: number): string[] {
-  const words = text.split(" ");
-  const lines = [];
-  let currentLine = "";
-
-  for (const word of words) {
-    if ((currentLine + word).length < maxCharsPerLine) {
-      currentLine += (currentLine ? " " : "") + word;
-    } else {
-      lines.push(currentLine);
-      currentLine = word;
-    }
-  }
-  if (currentLine) lines.push(currentLine);
-  return lines;
 }
