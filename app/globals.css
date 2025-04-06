@@ -55,6 +55,12 @@ body {
   background: #0000ff;
   text-align: center;
 }
+.teleteskt {
+  width: 80vw;
+}
+.menu {
+  cursor: pointer;
+}
 .content {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
