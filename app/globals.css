@@ -56,7 +56,7 @@ body {
   text-align: center;
 }
 .teleteskt {
-  max-width: 80vw;
+  width: min(80vw, 60ch);
 }
 .koffie {
   text-align: center;
